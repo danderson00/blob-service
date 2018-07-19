@@ -1,12 +1,11 @@
 {
-  "name": "blob-service",
-  "version": "0.0.0",
-  "description": "Blob storage service supporting a number of storage providers",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "jest"
+  "name": "express-azure-blob-storage",
+  "version": "0.0.1",
+  "description": "Middleware for uploading files to Azure blob storage",
+  "dependencies": {
+    "azure-storage": "^2.10.0",
+    "express": "^4.16.3"
   },
-  "keywords": ["blob", "binary", "storage", "service"],
   "author": "danderson00",
   "license": "MIT"
 }
