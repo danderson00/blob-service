@@ -1,0 +1,12 @@
+{
+  "name": "blob-service",
+  "version": "0.0.0",
+  "description": "Blob storage service supporting a number of storage providers",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": ["blob", "binary", "storage", "service"],
+  "author": "danderson00",
+  "license": "MIT"
+}
