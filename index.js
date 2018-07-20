@@ -1,15 +1,25 @@
 const uploadFactory = require('./upload')
+const Busboy = require('busboy')
 
 module.exports = function (options = {}) {
   const upload = uploadFactory(options.connectionString, options.containerName)
 
   return (req, res, next) => {
     const busboy = new Busboy({ headers: req.headers })
+    const uploadPromises = []
+
     busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
-      upload(filename, file)
-        .then(result => res.json(result))
-        .catch(next)
+      uploadPromises.push(
+        upload(filename, file)
+          .then(result => ({ filename, ...result }))
+          .catch(error => ({ filename, error }))
+      )
     })
+
+    busboy.on('finish', () => {
+      Promise.all(uploadPromises).then(results => res.json(results))
+    })
+
     req.pipe(busboy)
   }
 }

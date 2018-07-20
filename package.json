@@ -1,10 +1,15 @@
 {
-  "name": "express-azure-blob-storage",
+  "name": "blob-storage-middleware",
   "version": "0.0.1",
-  "description": "Middleware for uploading files to Azure blob storage",
+  "description": "Middleware for uploading files to various storage media",
   "dependencies": {
     "azure-storage": "^2.10.0",
-    "express": "^4.16.3"
+    "busboy": "^0.2.14"
+  },
+  "devDependencies": {
+    "express": "^4.16.3",
+    "form-data": "^2.3.2",
+    "xmlhttprequest": "^1.8.0"
   },
   "author": "danderson00",
   "license": "MIT"
