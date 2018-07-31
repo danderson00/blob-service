@@ -11,8 +11,8 @@ module.exports = function (options = {}) {
     busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
       uploadPromises.push(
         upload(filename, file)
-          .then(result => ({ filename, ...result }))
-          .catch(error => ({ filename, error }))
+          .then(result => Object.assign({}, { filename: filename }, result))
+          .catch(error => ({ filename: filename, error: error }))
       )
     })
 

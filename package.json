@@ -1,6 +1,6 @@
 {
   "name": "blob-storage-middleware",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Middleware for uploading files to various storage media",
   "dependencies": {
     "azure-storage": "^2.10.0",
